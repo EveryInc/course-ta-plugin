@@ -44,91 +44,53 @@ After collecting all answers, create or update a `CLAUDE.md` file in the project
 
 ## Phase 2: Environment Check
 
-Now verify the student's environment is ready. Run through each check below. For each one, run the check command silently first. If it passes, move on. If it fails, guide the student through fixing it — explain what the tool is and why they need it in simple terms. Tailor instructions to their machine (Mac vs Windows).
+Now verify the student's environment is ready. The goal is to make this seamless — install everything the student needs WITHOUT asking them to run commands. Claude Code is a general-purpose agent that can install software, configure tools, and set up environments. Use that power. The student should feel like magic is happening.
 
-**Important**: When the student needs to install something or run a command in a separate terminal, tell them to press **Cmd+T** (Mac) or **Ctrl+T** (Windows) to open a new terminal tab, run the command there, then come back.
+### Guiding principle
+
+**Do it, don't teach it.** If something is missing, install it. Don't explain what the command does. Don't ask the student to open a new tab. Just fix it and move on. The only time to involve the student is when authentication requires them to open a browser (GitHub login, Vercel login).
 
 ### Check 1: Project Directory
 
-Check the current working directory. If it looks like a general directory (Desktop, Documents, Downloads, home directory, or similar), tell the student:
-
-"It looks like you're running Claude Code from [directory]. Let's move to a proper project folder first. Open a new tab with Cmd+T and run:"
-
-Then provide the commands to create and navigate to a project folder (e.g., `mkdir -p ~/projects/my-app && cd ~/projects/my-app`), and tell them to relaunch Claude Code from there with `claude`. Then re-run `/setup`.
-
-If the directory looks like a project folder, continue.
+Check the current working directory. If it looks like a general directory (Desktop, Documents, Downloads, home directory, or similar), tell the student they need to be in a project folder. Create one for them (e.g., `~/projects/my-app`), explain that they should close this session, navigate to that folder, and relaunch Claude Code from there with `claude`.
 
 ### Check 2: Node.js
 
-```bash
-node --version
-```
-
-If not installed, explain: "Node.js is what runs JavaScript on your computer — it's the engine behind the app we're building." Guide them to install it from https://nodejs.org (LTS version).
+Check if Node.js is installed. If not, install it silently using the appropriate method for their OS (brew, nvm, or direct download). Don't explain what Node.js is unless they ask.
 
 ### Check 3: Git
 
-```bash
-git --version
-```
+Check if Git is installed. If not, install it silently (xcode-select --install on Mac, or appropriate method for Windows). Don't explain what Git is unless they ask.
 
-If not installed:
-- **Mac**: `xcode-select --install`
-- **Windows**: Guide to https://git-scm.com/downloads
+### Check 4: GitHub CLI + Authentication
 
-Explain: "Git keeps track of every change you make to your code — like a save history for your project."
+Check if `gh` is installed and authenticated. If `gh` is missing, install it silently. If not authenticated, this is one of the cases where the student needs to act — tell them: "I need you to log into GitHub. A browser window should open — just follow the steps there." Then run `gh auth login`.
 
-### Check 4: GitHub Account
+### Check 5: Vercel CLI + Authentication
 
-```bash
-gh auth status
-```
-
-If not authenticated or gh not installed:
-1. First check if `gh` CLI is installed. If not, guide installation:
-   - **Mac**: `brew install gh` (or download from https://cli.github.com)
-   - **Windows**: Download from https://cli.github.com
-2. Then run `gh auth login` — tell them to open a new tab with Cmd+T/Ctrl+T to do this.
-
-Explain: "GitHub is where your code lives online. It's also how we deploy your app and run tests automatically."
-
-### Check 5: Vercel Account + CLI
-
-```bash
-vercel --version
-```
-
-If not installed:
-1. Install: `npm install -g vercel`
-2. Then login: `vercel login` (tell them to open a new tab for this)
-
-Explain: "Vercel is what puts your app on the internet — one click and your app is live at a real URL."
+Check if `vercel` CLI is installed. If not, install it silently via `npm install -g vercel`. Then check if authenticated. If not, tell the student: "I need you to log into Vercel. A browser window will open — just sign in or create an account there." Then run `vercel login`.
 
 ### Check 6: Vercel Agent Browser Skill
 
-```bash
-test -f .claude/skills/agent-browser/SKILL.md && echo "installed" || echo "not installed"
-```
-
-If not installed, tell the student to run in a new tab (Cmd+T / Ctrl+T):
+Check if `.claude/skills/agent-browser/SKILL.md` exists in the project. If not, install it silently:
 ```
 npx skills add vercel-labs/agent-browser
 ```
 
-Explain: "This gives Claude Code the ability to open a browser and check that your app is actually working — like having a QA tester built in."
-
 ### Check 7: Vercel React Best Practices Skill
 
-```bash
-test -d .claude/skills/react-best-practices && echo "installed" || echo "not installed"
-```
-
-If not installed, tell the student to run in a new tab:
+Check if the React best practices skill exists in `.claude/skills/`. If not, install it silently:
 ```
 npx skills add vercel-labs/agent-skills
 ```
 
-Explain: "This teaches Claude Code the best practices for building React apps — like having a senior engineer review your code."
+### Progress updates
+
+As each check passes (whether it was already good or just got fixed), give the student a brief one-line update so they know things are happening. Keep it light:
+- "Node.js — good to go."
+- "Git — all set."
+- "GitHub — installed, just need you to log in..."
+- "Vercel skills — installing now... done."
 
 ## Wrap Up
 
