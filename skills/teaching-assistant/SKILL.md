@@ -66,6 +66,9 @@ Check the current time and reference the session schedule in `references/session
 - **SQLite** — Local development (zero setup, file-based)
 - **Neon PostgreSQL** — Production (serverless PostgreSQL in the cloud)
 
+**Testing:**
+- **Vitest** — Fast unit and integration testing framework (like Jest, but faster and built for modern JS)
+
 **Deployment:**
 - **Vercel** — Hosting (serverless, auto-scales, free tier)
 - **GitHub** — Source code hosting and version control
