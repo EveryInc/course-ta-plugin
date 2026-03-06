@@ -13,21 +13,21 @@ Run this inside Claude Code:
 /plugin install course-ta-plugin@everyinc-course-ta-plugin
 ```
 
-## What You Get
-
-### Teaching Assistant
-
-Your TA is always available. Just ask a question — anything from "what is a database?" to "my app isn't working" — and it'll help you out. It knows the course tech stack, the concepts we covered, and will explain things in plain English.
-
-A few things you can try:
-- "What is Vercel and why are we using it?"
-- "I got an error, here's a screenshot" (paste a screenshot!)
-- "Can you explain what a pull request is?"
-- "How does deployment work?"
+## Getting Started
 
 ### `/setup`
 
-Run this first! It asks you three quick questions so your TA can personalize its help to your experience level and goals.
+**Run this first!** It gets to know you (name, experience, what you want to build) and then checks that your machine has everything installed for the course — Node.js, Git, GitHub, Vercel, and the skills you'll need. If anything's missing, it walks you through installing it step by step.
+
+### `/ask-your-ta`
+
+This is your go-to command. Whenever you have a question — any question — type `/ask-your-ta` followed by your question. Your TA knows the course material, the tech stack, and will meet you where you are.
+
+A few things you can try:
+- `/ask-your-ta What is a database?`
+- `/ask-your-ta My app isn't starting` (paste a screenshot!)
+- `/ask-your-ta Can you explain what a pull request is?`
+- `/ask-your-ta How does deployment work?`
 
 ### `/about-every`
 
