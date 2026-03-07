@@ -9,8 +9,8 @@ Two files must stay in sync:
 - `.claude-plugin/marketplace.json` — marketplace metadata version AND the plugin entry version
 
 **Rules:**
-- Only bump versions when there's a meaningful change (new feature, behavior change, bug fix). Don't bump for typos, comments, or internal-only changes.
-- All version bumps are **major** (e.g., 0.5.0 → 1.0.0, not 0.5.0 → 0.5.1 or 0.6.0).
+- Bump for meaningful changes (new feature, behavior change, bug fix). Don't bump for typos, comments, or internal-only changes.
+- Not all changes require a major version bump — use your judgment.
 
 ## Design Philosophy
 
