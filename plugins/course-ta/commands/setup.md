@@ -1,30 +1,42 @@
 ---
 description: Set up your student profile and verify all prerequisites for the course
-allowed-tools: Read, Write, Edit, Bash, AskUserQuestion, Agent
+allowed-tools: Read, Write, Edit, Bash, Agent
 ---
 
 This command onboards a student for Every Consulting's "Build a Production-Ready App with Claude Code" course. It has two phases: getting to know the student, and making sure their environment is ready.
 
 ## Phase 1: Get to Know the Student
 
-Use AskUserQuestion to ask the following questions, ONE AT A TIME. Wait for each answer before asking the next. Be warm and conversational — this is their first interaction with their TA.
+Ask the following questions by outputting them as text, ONE AT A TIME. Do NOT use AskUserQuestion — just print each question as a message and wait for the student to type their response naturally. This feels more like a conversation and lets them give open-ended answers.
 
-**Question 1: Name**
-Ask: "Hey! Welcome to Build a Production-Ready App with Claude Code. I'm your AI teaching assistant — I'll be here to help whenever you need it. What's your name?"
+Be warm and conversational — this is their first interaction with their TA.
+
+**Question 1: Welcome + Name**
+Output: "Hey! Welcome to Build a Production-Ready App with Claude Code. I'm your AI teaching assistant — I'll be here to help whenever you need it. What's your name?"
+
+Then wait for their response.
 
 **Question 2: Machine**
-Ask: "Nice to meet you, [name]! Quick question — are you on a Mac or a Windows PC?"
+Output: "Nice to meet you, [name]! Quick question — are you on a Mac or a Windows PC?"
+
+Then wait for their response.
 
 **Question 3: Experience**
-Ask: "Have you ever built an app or website before? No wrong answer — we're starting from scratch either way."
+Output: "Have you ever built an app or website before? Totally fine if not — just curious where you're starting from."
+
+Then wait for their response. Let them share as much or as little as they want.
 
 **Question 4: Motivation**
-Ask: "What made you want to take this course? Is there a specific project you're dreaming about, or are you just curious to see what's possible?"
+Output: "What made you want to take this course? Is there something specific you're hoping to build, or are you just curious to see what's possible?"
+
+Then wait for their response. This is the most important question — store their full answer, not a summary.
 
 **Question 5: Comfort level**
-Ask: "Last one — on a scale of 1-5, how comfortable are you with using your computer's terminal (that black screen with text)? 1 = never touched it, 5 = I live in it."
+Output: "Last one — on a scale of 1-5, how comfortable are you with using your computer's terminal (that black screen with text)? 1 = never touched it, 5 = I live in it."
 
-After collecting all answers, create or update a `CLAUDE.md` file in the project root with a student profile section:
+Then wait for their response.
+
+After collecting all answers, create or update a `CLAUDE.md` file in the project root with a student profile section. For motivation, preserve their words — quote them rather than summarizing:
 
 ```markdown
 # Student Profile
@@ -32,7 +44,7 @@ After collecting all answers, create or update a `CLAUDE.md` file in the project
 - **Name**: [their name]
 - **Machine**: [Mac or Windows]
 - **Experience**: [their answer, summarized in one sentence]
-- **Motivation**: [their answer, summarized in one sentence]
+- **Motivation**: [their answer in their own words]
 - **Terminal comfort**: [their number] / 5
 - **Setup date**: [today's date]
 
