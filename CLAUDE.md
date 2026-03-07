@@ -4,9 +4,13 @@ AI teaching assistant marketplace for Every Consulting's "Build a Production-Rea
 
 ## Versioning
 
-**Always bump versions** when making changes. Two files must stay in sync:
+Two files must stay in sync:
 - `plugins/course-ta/.claude-plugin/plugin.json` — plugin version
 - `.claude-plugin/marketplace.json` — marketplace metadata version AND the plugin entry version
+
+**Rules:**
+- Only bump versions when there's a meaningful change (new feature, behavior change, bug fix). Don't bump for typos, comments, or internal-only changes.
+- All version bumps are **major** (e.g., 0.5.0 → 1.0.0, not 0.5.0 → 0.5.1 or 0.6.0).
 
 ## Design Philosophy
 
