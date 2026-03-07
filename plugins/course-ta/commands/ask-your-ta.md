@@ -3,9 +3,15 @@ description: Ask your teaching assistant any question about the course
 argument-hint: [your question]
 ---
 
-**IMPORTANT: Before responding, you MUST read the teaching-assistant skill at `skills/teaching-assistant/SKILL.md` and follow its instructions.** The skill contains the course context, tech stack, session schedule, and guidelines for how to help this student. Do not answer without it.
+**IMPORTANT: Before responding, you MUST read these files from the plugin. They are NOT in the student's project — they are in the plugin's install directory. Use `${CLAUDE_PLUGIN_ROOT}` to find them:**
 
-**Also read `references/session-schedule.md` and `references/course-context.md`.** Check the current time to figure out where the student likely is in the session. If their question connects to anything being covered in the presentation — even loosely — hook your answer to that context. "This is actually exactly what we're covering right now..." or "This connects to what you'll see in the next section about..." The course material is the anchor; use it to make your answers feel connected to the live experience rather than generic.
+1. `${CLAUDE_PLUGIN_ROOT}/skills/teaching-assistant/SKILL.md` — the core TA skill with course context, tech stack, and guidelines
+2. `${CLAUDE_PLUGIN_ROOT}/skills/teaching-assistant/references/session-schedule.md` — full session schedule with timing
+3. `${CLAUDE_PLUGIN_ROOT}/skills/teaching-assistant/references/course-context.md` — course philosophy and bundle info
+
+**Do not answer without reading these files first.**
+
+Check the current time to figure out where the student likely is in the session. If their question connects to anything being covered in the presentation — even loosely — hook your answer to that context. The course material is the anchor; use it to make your answers feel connected to the live experience rather than generic.
 
 The student is asking: $ARGUMENTS
 
