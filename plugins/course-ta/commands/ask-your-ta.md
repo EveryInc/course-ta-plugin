@@ -3,9 +3,9 @@ description: Ask your teaching assistant any question about the course
 argument-hint: [your question]
 ---
 
-The student is asking their teaching assistant for help. Their question or topic is: $ARGUMENTS
+**IMPORTANT: Before responding, you MUST read the teaching-assistant skill at `skills/teaching-assistant/SKILL.md` and follow its instructions.** The skill contains the course context, tech stack, session schedule, and guidelines for how to help this student. Do not answer without it.
 
-Use the teaching-assistant skill to respond. Be a great teacher — meet the student where they are.
+The student is asking: $ARGUMENTS
 
 If no question was provided (empty $ARGUMENTS), warmly prompt the student:
 

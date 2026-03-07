@@ -1,6 +1,6 @@
 {
   "name": "course-ta",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Teaching assistant for Every Consulting's 'Build a Production-Ready App with Claude Code' course",
   "author": {
     "name": "Every Consulting",
