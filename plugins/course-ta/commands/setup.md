@@ -3,7 +3,11 @@ description: Set up your student profile and verify all prerequisites for the co
 allowed-tools: Read, Write, Edit, Bash, Agent
 ---
 
-This command onboards a student for Every Consulting's "Build a Production-Ready App with Claude Code" course. Two goals: get to know the student, then make sure their machine is ready.
+This command onboards a student for Every Consulting's "Build a Production-Ready App with Claude Code" course.
+
+## Precondition: Check Project Directory (DO THIS FIRST)
+
+Before anything else — before welcoming the student, before asking questions — check the current working directory. If it's a generic location (Desktop, Documents, Downloads, home directory, or similar), STOP. Do not proceed with the interview. Instead, tell the student they need to be in a dedicated project folder, create one for them (e.g., `~/projects/my-app`), and explain they should close this session, `cd` into that folder, and run `claude` again from there. Only continue with the rest of setup once they're in a proper project directory.
 
 ## Phase 1: Get to Know the Student
 
@@ -47,8 +51,7 @@ Make sure the student's machine has everything they need. The guiding principle:
 
 ### What needs to be ready
 
-1. **Project directory** — If they're in a generic location (Desktop, Documents, home dir), create a project folder for them and tell them to relaunch Claude Code from there.
-2. **Node.js** — Install silently if missing (brew/nvm on Mac, appropriate method on Windows).
+1. **Node.js** — Install silently if missing (brew/nvm on Mac, appropriate method on Windows).
 3. **Git** — Install silently if missing.
 4. **GitHub CLI (`gh`)** — Install silently if missing. If not authenticated, tell the student a browser will open for login, then run `gh auth login`.
 5. **Vercel CLI** — Install via `npm install -g vercel` if missing. If not authenticated, tell the student a browser will open, then run `vercel login`.
