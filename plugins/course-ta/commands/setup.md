@@ -25,9 +25,9 @@ Output each question as text and wait for the student to reply before asking the
 
 Start by welcoming them warmly and asking their name. Then work through the rest naturally — it doesn't have to be five separate questions if the conversation covers things organically.
 
-### Save the profile
+### Save the profile and workflow rules
 
-After the conversation, create or update `CLAUDE.md` in the project root:
+After the conversation, create or update `CLAUDE.md` in the project root. This file must include BOTH the student profile AND the workflow rules below — the workflow rules are instructions for future Claude sessions working in this project, so they must be written to the file exactly as shown:
 
 ```markdown
 # Student Profile
