@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "AI teaching assistant for Every Consulting's 'Build a Production-Ready App with Claude Code' workshop.",
-    "version": "0.5.2"
+    "version": "0.6.0"
   },
   "plugins": [
     {
       "name": "course-ta",
       "source": "./plugins/course-ta",
       "description": "Your personal TA for the course — knows the curriculum, the tech stack, and meets you where you are. Commands: /setup, /ask-your-ta, /about-every.",
-      "version": "0.5.2"
+      "version": "0.6.0"
     }
   ]
 }
