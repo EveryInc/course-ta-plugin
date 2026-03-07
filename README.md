@@ -9,8 +9,8 @@ This plugin gives you a personal TA right inside Claude Code. It knows the cours
 Run this inside Claude Code:
 
 ```
-/plugin marketplace add everyinc/course-ta-plugin
-/plugin install course-ta-plugin@everyinc-course-ta-plugin
+/plugin marketplace add EveryInc/course-ta-plugin
+/plugin install course-ta@course-ta-plugin
 ```
 
 ## Getting Started
