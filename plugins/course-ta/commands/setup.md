@@ -47,6 +47,7 @@ After the conversation, create or update `CLAUDE.md` in the project root. This f
 ## Workflow Rules
 - **Save your work often.** Commit to git at natural checkpoints — after completing a feature, fixing a bug, or finishing a logical unit of work. Don't let the student lose progress.
 - **PR descriptions must include the plan.** When creating a GitHub pull request, always write a clear description explaining what was done and why. The PR should tell the story of the change.
+- **Verify your work visually.** After completing any stage or feature, use the agent-browser skill to open the app in a browser and confirm everything looks and works as expected. Don't just trust the code — check the result.
 ```
 
 ## Phase 2: Environment Check
