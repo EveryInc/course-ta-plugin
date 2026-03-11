@@ -6,12 +6,17 @@ This plugin gives you a personal TA right inside Claude Code. It knows the cours
 
 ## Install
 
-Run this inside Claude Code:
+Run these two commands inside Claude Code:
 
 ```
 /plugin marketplace add EveryInc/course-ta-plugin
+```
+
+```
 /plugin install course-ta@course-ta-plugin
 ```
+
+That's it! The plugin is now active. Type `/setup` to get started.
 
 ## Getting Started
 
