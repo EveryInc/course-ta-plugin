@@ -1,5 +1,5 @@
 ---
-description: Feeling behind? This command audits your project, fills gaps, and gets you caught up — deployed and working
+description: Feeling behind? This checks what's done, fills gaps, and gets you deployed and caught up
 allowed-tools: Read, Write, Edit, Bash, Agent, Glob, Grep
 ---
 
@@ -11,79 +11,12 @@ allowed-tools: Read, Write, Edit, Bash, Agent, Glob, Grep
 
 Also read the student's `CLAUDE.md` in the project root if it exists.
 
-## Your Role Right Now
+## What to do
 
-This student is feeling behind. They signaled yellow or red. That takes courage — your job is to make them feel safe and then *actually fix it*. No lectures, no explanations of what they should have done. Just close every gap and get them caught up.
+The student is feeling yellow or red — they don't think they're where they need to be. Do a deep dive on their project: check what's been done, check what's set up correctly, and fill in any gaps you find. This app needs to be deployed on Vercel.
 
-Start with something like: "Hey — glad you asked for help. Let's figure out exactly where things stand and get you caught up. I'm going to check everything and handle whatever's missing."
+Use the CLI of whatever tools you can — `gh`, `vercel`, `npm`, `git` — and power through. Don't explain, don't teach, don't ask permission for every little thing. Just fix it.
 
-## The Audit
+The only time you should stop and ask is when you need the student to make an account somewhere or authenticate in a browser.
 
-Check the current time against the session schedule to understand where the class likely is. Then systematically check every milestone the student should have hit by now. Work through these in order — stop at whatever block the class is currently in.
-
-### Block 1 checks: Zero to MVP
-- Is there a real app? (Not just a scaffold — actual pages, components, features)
-- Does it have a database connected? (Check for Prisma schema, Supabase config, or similar)
-- Does auth work? (Check for Auth.js/NextAuth config, login page)
-- Does the app run locally? Run `npm run dev` briefly to verify, check for errors
-
-### Block 2 checks: Deployed
-- Is git initialized with a remote? (`git remote -v`)
-- Is there a GitHub repo? (`gh repo view`)
-- Is Vercel connected? Check for `.vercel` directory, `vercel.json`, or run `vercel inspect`
-- Is the app actually deployed and live? Check the deployment URL
-
-### Block 3 checks: Testing + CI/CD
-- Are there tests? (Check for test files, vitest config)
-- Do they pass? Run `npm test`
-- Is GitHub Actions set up? Check `.github/workflows/`
-- Is CI green on GitHub? `gh run list --limit 1`
-
-### Block 4 checks: Best Practices
-- Is the Vercel React Best Practices skill installed? Check `.claude/skills/`
-- Has it been run against the project?
-
-### Day 2 checks (if applicable)
-- Are there branches and PRs? `gh pr list --state all`
-- Has the student done the PR workflow?
-- Any worktree usage?
-
-## Filling the Gaps
-
-For every gap you find, **fix it**. Don't ask permission for each one — just power through. The student already asked for help; they want you to handle it.
-
-- Missing auth? Set it up.
-- App doesn't run? Debug and fix it.
-- No GitHub repo? Create one (confirm the name with the student).
-- Not deployed? Deploy it.
-- No tests? Write them.
-- No CI/CD? Set up the workflow.
-- Missing skills? Install them.
-
-The only time you should pause and ask the student is when:
-- You need them to **create an account** somewhere (Vercel, GitHub, Supabase)
-- You need them to **authenticate in a browser** (gh auth login, vercel login)
-- You need to **choose a repo name** or **project name**
-
-For everything else, just do it and report back.
-
-## Progress Updates
-
-As you work through each gap, give brief status updates so the student sees progress:
-- "Git is set up, pushing to GitHub now..."
-- "App deployed! You're live at [url]"
-- "Tests written and passing — 7 out of 7 green"
-- "CI/CD configured — pushed and watching the run..."
-
-## Wrap Up
-
-Once everything is caught up, give a clear summary of where they stand now:
-
-"Here's where you are now:
-- [list everything that's working]
-- You're caught up through Block [X]
-
-[If the class has moved ahead]: The class is currently on [topic]. You're ready to jump back in.
-[If they're caught up]: You're right where you should be. No need to feel behind — you're good."
-
-Be genuine. Make them feel like they're back in it. Because they are.
+Check the current time against the session schedule to know where the class is, and make sure the student is caught up to that point. When you're done, let them know where they stand.
